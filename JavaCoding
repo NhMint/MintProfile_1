@@ -1,0 +1,76 @@
+console.log("something") => print something
+console.log(`something ${data} something`)
+|| or
+&& and
+
+console.log(x<y, x>y, x=!y, x==y,, x===y, x!==y,  )  => True/False (True == 1, False == 0)
+    note == compares value of data (ignore whether is it string or number)
+        === compares type of data
+
+
+if (condition) {
+    // 1st command;
+} else if {
+    // 2nd command;
+} else if {
+    // 3rd command;
+} .......
+  else {
+    // final command;
+}
+
+switch-case: (can include many cases with one command and remember to add {break;} after each case)
+const data = "data"
+switch (data || condition associated with data) {
+    case "result1":
+        // command;
+        break;
+    case "result2":
+        // command;
+        break;
+    ......
+    default:
+        // finalCommand;
+        break;
+}
+
+
+condition ? resultifTrue : resultifFalse;
+
+function functionName(parm1, parm2,....) {
+    statement1;
+    statement2;
+
+    return something;
+}
+
+const functionName = (parm1, parm2, ...) => {
+    statement1;
+    statement2;
+
+    return something;
+}
+
+<Image source={require:"../../assets/..."}/>
+<Image source={{uri:"https//..."}}/>
+
+function handleClick() {
+    alert("Button clicked!")
+}
+<TouchableOpacity Onpress={handleClick}>
+    <Text> Hi</Text>
+</TouchableOpacity>
+
+const [name, setName] = useState("");
+function handleClick() {
+    console.log(name)
+}
+function handleChangeText(ten) {
+    setName(ten)
+}
+<View>
+    <TextInput placeholder="Enter your name" value={name} onChangeText={handleChangeText}/>
+    <TouchableOpacity onPress={handleClick}>
+        <Text>Save</Text>
+    </TouchableOpacity>
+</View>
