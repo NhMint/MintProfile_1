@@ -25,7 +25,7 @@ export default function Home() {
     console.log(uptodateStudent);
     return (
         <View>
-          
+            <Text>Hello Mint</Text>
         </View>
 
 
