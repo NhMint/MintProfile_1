@@ -1,19 +1,19 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Home() {
     const navigation = useNavigation<any>();
 
     const handleBack = () => {
         // navigation.goBack();
-        navigation.navigate("Profile");
+        navigation.navigate("Login");
     }
 
     return (
-        <View>
+        <ScrollView>
             <Text>Home</Text>
             <Button title="Return" onPress={handleBack} />
-        </View>
+        </ScrollView>
     )
 }
 

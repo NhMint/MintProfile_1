@@ -3,13 +3,15 @@ import { useState } from "react";
 import { Alert, StyleSheet, View } from "react-native";
 import CustomInput from "../components/common/CustomInput";
 import CustomButton from "../components/common/CustomButton";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useScrollViewOffset } from "react-native-reanimated";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [fullName, setFullName] = useState("");
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!fullName || !email || !password) {
             Alert.alert("Please fill in all fields");
             return;
@@ -27,7 +29,20 @@ export default function Login() {
             return;
         }
         // handle Sign Up
-        Alert.alert("Login successful");
+        let users =await AsyncStorage.getItem('user') || "";
+        users = users? JSON.parse(users) : [];
+        users =[
+            ...users,
+            {
+                fullName,
+                email,
+                password
+            }
+        ];
+        await AsyncStorage.setItem('user', JSON.stringify(users))
+        Alert.alert("Sign up successfully");
+        handleChangeSignIn();
+
     }
 
     const navigation = useNavigation<any>();
